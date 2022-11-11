@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { SearchResult } from '../Models/searchResult';
-
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
@@ -9,7 +9,8 @@ import { SearchResult } from '../Models/searchResult';
 export class SearchResultComponent implements OnInit {
   
   @Input() result!: SearchResult;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
