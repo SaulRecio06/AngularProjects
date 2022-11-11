@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { SearchResult } from '../Models/searchResult';
 
 @Component({
@@ -9,13 +10,23 @@ import { SearchResult } from '../Models/searchResult';
 export class YouTubeSearchComponent implements OnInit {
   results: SearchResult[] | undefined;
   loading: boolean | undefined;
-  constructor() { }
+  PruebaUrl: string ="rdlvUYWTvBw";
+  BaseUrl: string = "https://www.youtube.com/embed/rdlvUYWTvBw";
+
+  constructor(private sanitizer: DomSanitizer) { }
  
 
   updateResults(results: SearchResult[]): void {
     this.results = results;
   }
-  ngOnInit(): void {
+  ngOnInit(){
   }
+
+  getUrl()
+  {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.BaseUrl);
+  }
+
+
 }
 

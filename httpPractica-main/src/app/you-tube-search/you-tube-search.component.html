@@ -1,7 +1,7 @@
 <div class="container">
     <div class="page-header">
         <h1>Busqueda en Youtube
-            <img style="float: right;" *ngif="loading" src="assets/images/loading.gif">
+            <img style="float: right;" *ngIf="loading" src="assets/images/loading.gif">
         </h1>
     </div>
     <div class="row">
@@ -11,8 +11,13 @@
             </app-search-box>
         </div>
     </div>
+    <!-- <h1>Video Prueba</h1> -->
+    <!-- <iframe width="500" height="281" [src]="getUrl()" frameborder="0" allowfullscreen>
+    </iframe> -->
     <div class="row">
         <app-search-result *ngFor="let result of results" [result]="result">
         </app-search-result>
     </div>
 </div>
+<!-- <h1>https://www.youtube.com/embed/{{PruebaUrl}}</h1>
+<h1>https://www.youtube.com/embed/{{PruebaUrl}}</h1> -->

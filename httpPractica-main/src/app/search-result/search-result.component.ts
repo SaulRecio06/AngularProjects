@@ -9,10 +9,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class SearchResultComponent implements OnInit {
   
   @Input() result!: SearchResult;
-  constructor() {
+  PruebaUrl: string ="rdlvUYWTvBw";
+  BaseUrl: string = "https://www.youtube.com/embed/rdlvUYWTvBw";
+
+  constructor(private sanitizer: DomSanitizer) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){}
 
+  getUrl()
+  {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.result.videoUrl);
+  }
 }
