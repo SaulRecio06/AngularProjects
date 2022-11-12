@@ -11,6 +11,7 @@ export class SearchResultComponent implements OnInit {
   @Input() result!: SearchResult;
   PruebaUrl: string ="rdlvUYWTvBw";
   BaseUrl: string = "https://www.youtube.com/embed/rdlvUYWTvBw";
+  LinkVideo: string="";
 
   constructor(private sanitizer: DomSanitizer) {
   }
@@ -19,6 +20,20 @@ export class SearchResultComponent implements OnInit {
 
   getUrl()
   {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.result.videoUrl);
+    
+          // console.log(this.BaseUrl);
+
+    const Base : string = this.result.videoUrl.split('/')[2];
+    const id : string = this.result.videoUrl.split('=')[1];
+    this.LinkVideo="https://"+Base+"/embed/"+id;
+      
+     
+    // console.log(Base);
+    // console.log(id);
+
+    console.log(this.LinkVideo);
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.LinkVideo);
   }
+  
 }
