@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { SearchResult } from '../Models/searchResult';
 
 @Component({
@@ -10,13 +9,13 @@ import { SearchResult } from '../Models/searchResult';
 export class YouTubeSearchComponent implements OnInit {
   results: SearchResult[] | undefined;
   loading: boolean | undefined;
-  PruebaUrl: string ="rdlvUYWTvBw";
+  // PruebaUrl: string ="rdlvUYWTvBw";
   // BaseUrl: string = "https://www.youtube.com/embed/rdlvUYWTvBw";
-  BaseUrl: string = "https://www.youtube.com/watch?v=rdlvUYWTvBw";
-  LinkVideo: string="";
+  // BaseUrl: string = "https://www.youtube.com/watch?v=rdlvUYWTvBw";
+  // LinkVideo: string="";
 
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor() { }
  
 
   updateResults(results: SearchResult[]): void {
@@ -25,22 +24,6 @@ export class YouTubeSearchComponent implements OnInit {
   ngOnInit(){
   }
 
-  getUrl()
-  {
-    // console.log(this.BaseUrl);
-
-    const Base : string = this.BaseUrl.split('/')[2];
-    const id : string = this.BaseUrl.split('=')[1];
-    this.LinkVideo="https://"+Base+"/embed/"+id;
-      
-     
-    // console.log(Base);
-    // console.log(id);
-
-    console.log(this.LinkVideo);
-
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.LinkVideo);
-  }
   }
 
 

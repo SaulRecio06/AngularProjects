@@ -9,6 +9,7 @@ import { youtubeSearchInjectable } from './Injectables/youtube-search.service';
 import { FormsModule } from '@angular/forms';
 import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.component';
 import { SimpleHttpComponent } from './simple-http/simple-http.component';
+import { UrlPipesPipe } from './url-pipes.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SimpleHttpComponent } from './simple-http/simple-http.component';
     SearchBoxComponent,
     SearchResultComponent,
     YouTubeSearchComponent,
-    SimpleHttpComponent
+    SimpleHttpComponent,
+    UrlPipesPipe
   ],
   imports: [
     BrowserModule,
