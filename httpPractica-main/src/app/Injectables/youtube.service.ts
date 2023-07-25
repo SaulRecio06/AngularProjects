@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {SearchResult} from '../Models/searchResult';
 import {map, Observable} from 'rxjs';
 
-export const YOUTUBE_API_KEY: string = "AIzaSyD4KD1WTj-tnjd7XNrlMwRzGRAm96BMtxA";
-export const YOUTUBE_API_URL: string = "https://www.googleapis.com/youtube/v3/search";
+export const YOUTUBE_API_KEY: string = "********";
+export const YOUTUBE_API_URL: string = "*******";
 
 @Injectable({
   providedIn: 'root'
